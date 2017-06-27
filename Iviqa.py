@@ -11,11 +11,6 @@ from ciphers.Rot import Rot
 from ciphers.OneTimePad import OneTimePad
 
 if __name__ == "__main__":
-	# if len(argv) == 1:
-	# 	print(Iviqa.decrypt("dap mpul njps wj rzhw nkcf qtay... ggf d jpgkt xti wfv’o jzv au.", "elucubraient"))
-	# 	print(Iviqa.decrypt("dap mpul njps gj rzhg naln mcgj... npw d imfbx miz ovq'o iwu ry.", "elucubraient"))
-	# 	print(Iviqa.encrypt("you just make me feel like home... but i guess you can't get it.", "elucubraient"))
-
 	app = App("Iviqa", {
 		'cipher': {
 			'value': "Iviqa",

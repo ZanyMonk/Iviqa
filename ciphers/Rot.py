@@ -11,7 +11,7 @@ from utils.strings import is_alpha
 
 class Rot(Cipher):
 	def __init__(self):
-		super().__init__("Rot")
+		super().__init__("Rot", int)
 
 	def __crypt(self, text: str, n: int, encrypt: bool) -> str:
 		d = -1 if not encrypt else 1

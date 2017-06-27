@@ -9,7 +9,7 @@ from ciphers.Rot import Rot
 from ciphers.OneTimePad import OneTimePad
 
 ciphers = {
-	'Iviqa': Iviqa,
-	'Rot': Rot,
-	'OneTimePad': OneTimePad
+	'Iviqa': Iviqa(),
+	'Rot': Rot(),
+	'OneTimePad': OneTimePad()
 }

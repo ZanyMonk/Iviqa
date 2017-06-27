@@ -5,8 +5,9 @@ if __name__ == "__main__":
 	exit(1)
 
 class Cipher:
-	def __init__(self, cipher_name):
-		self.name = cipher_name
+	def __init__(self, _name, _key_type = str):
+		self.name = _name
+		self.key_type = _key_type
 
 	def encrypt(self, plaintext: str, key: str) -> str:
 		raise NotImplementedError("Cipher.encrypt(plaintext: str, key: str) is abstract.")

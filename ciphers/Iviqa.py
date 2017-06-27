@@ -9,12 +9,12 @@ from utils.strings import *
 
 class Iviqa(Cipher):
 	def __init__(self):
-		super().__init__("Iviqa")
+		super().__init__("Iviqa", str)
 
 	def __crypt(self, text: str, key: str, encrypt: bool) -> str:
 		text = text.lower()
 		key = strip_accents(key)
-		
+
 		s = ""
 		d = -1 if not encrypt else 1
 		x = 0
