@@ -25,10 +25,11 @@ class App:
 				flag = self.settings[s]["flag"]
 				if type(flag) == str:
 					a = self.seekArg(args, flag)
-					if self.settings[s]["required"] and (a == False or a == None):
+					if (self.settings[s]["required"] and a == False) or a == None:
 						raise Exception("Missing " + s + " parameter.")
-					elif a != None and a != False:
+					else:
 						self.settings[s]["value"] = a
+
 				elif type(flag) == int:
 					a = self.seekPositionalArg(args, flag)
 					if a != False:
@@ -40,7 +41,7 @@ class App:
 					found = False
 					for k in flag.keys():
 						a = self.seekArg(args, k)
-						if a != False:
+						if a == None:
 							found = True
 							self.settings[s]["value"] = flag[k]
 							break
@@ -61,10 +62,9 @@ class App:
 	def seekArg(self, args: list, arg: str):
 		for i in range(len(args)):
 			if args[i] == "-"+arg:
-				if args[i+1][0] == "-":
-					return None
-				else:
-					return args[i+1]
+				return None
+			elif args[i] == "--"+arg:
+				return args[i+1]
 
 		return False
 

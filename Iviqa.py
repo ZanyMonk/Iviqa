@@ -18,11 +18,12 @@ if __name__ == "__main__":
 			'required': False
 		},
 		'mode': {
+			'value': False,
 			'flag': {
 				'd': False,
 				'e': True
 			},
-			'required': True
+			'required': False
 		},
 		'text': {
 			'flag': -2,
@@ -37,6 +38,7 @@ if __name__ == "__main__":
 	app.parseArgs(argv)
 	if len(argv) > 1:
 		cipher = Iviqa()
+		print(app.get("cipher"))
 		if app.get("cipher") in Ciphers.ciphers.keys():
 			cipher = globals()[app.get("cipher")]()
 		else:
