@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from re import match
+
 if __name__ == "__main__":
 	print("This shouldn't be executed liked that.")
 	exit(1)
@@ -54,7 +56,7 @@ class App:
 			return False
 
 		a = args[pos]
-		if a[0] == "-":
+		if a[0] == "-" and not match(r"^\d$", a[1]):
 			return None
 		else:
 			return a
